@@ -5,6 +5,8 @@ import com.stanlz.entity.vo.UsersVO;
 import com.stanlz.service.UserService;
 import com.stanlz.utils.JSONResult;
 import com.stanlz.utils.MD5Utils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -16,10 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 @RestController
+@Api(value="用户注册登录的接口", tags= {"注册和登录的接口"})
 public class LoginAndRegistController extends BasicController{
     @Autowired
     UserService userService;
 
+    @ApiOperation(value="用户注册")
     @PostMapping("/regist")
     public JSONResult regist(@RequestBody Users user) throws Exception{
         String username = user.getUsername();
@@ -61,7 +65,7 @@ public class LoginAndRegistController extends BasicController{
 
         // 1. 判断用户名和密码必须不为空
         if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
-            return JSONResult.ok("用户名或密码不能为空...");
+            return JSONResult.errorMsg("用户名或密码不能为空...");
         }
 
         // 2. 判断用户是否存在
@@ -77,6 +81,15 @@ public class LoginAndRegistController extends BasicController{
         } else {
             return JSONResult.errorMsg("用户名或密码不正确, 请重试...");
         }
+    }
+
+    @ApiOperation(value="用户注销")
+    @ApiImplicitParam(name="userId", value="用户id", required=true,
+            dataType="String", paramType="query")
+    @PostMapping("/logout")
+    public JSONResult logout(String userId) {
+        redis.del(USER_REDIS_SESSION + ":" + userId); //清除redis对应的数据
+        return JSONResult.ok();
     }
 
     // 公共方法，保存到redis并封装成vo返回

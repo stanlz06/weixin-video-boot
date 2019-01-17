@@ -11,4 +11,13 @@ public interface UserService {
 
     // 判断用户是否存在
     Users queryUserForLogin(String username,String password);
+
+    // 修改用户信息
+    void updateUserInfo(Users user);
+
+    // 查询用户信息
+    Users queryUserInfo(String userId);
+
+    // 查询用户是否关注
+    boolean queryIfFollow(String userId, String fanId);
 }
