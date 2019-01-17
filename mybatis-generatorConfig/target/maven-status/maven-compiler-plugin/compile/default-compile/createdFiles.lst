@@ -1,0 +1,16 @@
+com\stanlz\entity\Users.class
+com\stanlz\entity\Comments.class
+com\stanlz\dao\UsersFansMapper.class
+com\stanlz\entity\Videos.class
+com\stanlz\dao\UsersLikeVideosMapper.class
+com\stanlz\dao\UsersMapper.class
+com\stanlz\entity\UsersReport.class
+com\stanlz\dao\BgmMapper.class
+com\stanlz\dao\CommentsMapper.class
+com\stanlz\entity\Bgm.class
+com\stanlz\entity\UsersLikeVideos.class
+com\stanlz\dao\UsersReportMapper.class
+com\stanlz\entity\SearchRecords.class
+com\stanlz\entity\UsersFans.class
+com\stanlz\dao\SearchRecordsMapper.class
+com\stanlz\dao\VideosMapper.class
