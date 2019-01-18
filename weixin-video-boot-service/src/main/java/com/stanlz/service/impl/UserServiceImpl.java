@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void saveUser(Users user) {
-        // 利用Sid生成用户Id
+        // 利用Sid生成随机Id
         String userId = sid.nextShort();
         user.setId(userId);
         usersMapper.insert(user);

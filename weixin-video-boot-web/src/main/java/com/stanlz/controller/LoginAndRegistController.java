@@ -17,8 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 
+/**
+ * @Description: 用户注册登录的controller
+ */
+
+@Api(tags= {"LoginAndRegistController"},description="用户注册登录的接口")
 @RestController
-@Api(value="用户注册登录的接口", tags= {"注册和登录的接口"})
 public class LoginAndRegistController extends BasicController{
     @Autowired
     UserService userService;
@@ -49,11 +53,11 @@ public class LoginAndRegistController extends BasicController{
             return JSONResult.errorMsg("用户名已经存在，请换一个再试~!");
         }
 
-        // 只保存到数据库，不返回到前端
+        // 把用户密码保存到数据库,不返回到前端
         user.setPassword("");
 
+        // 保存到redis并封装到VO
         UsersVO userVO = setUserRedisSessionToken(user);
-
         return JSONResult.ok(userVO);
     }
 
@@ -76,6 +80,8 @@ public class LoginAndRegistController extends BasicController{
         if (userResult != null) {
             //只保存到数据库，不返回到前端
             userResult.setPassword("");
+
+            // 保存到redis并封装到VO
             UsersVO userVO = setUserRedisSessionToken(userResult);
             return JSONResult.ok(userVO);
         } else {
@@ -88,16 +94,22 @@ public class LoginAndRegistController extends BasicController{
             dataType="String", paramType="query")
     @PostMapping("/logout")
     public JSONResult logout(String userId) {
-        redis.del(USER_REDIS_SESSION + ":" + userId); //清除redis对应的数据
+        // 清除redis对应的数据
+        redis.del(USER_REDIS_SESSION + ":" + userId);
         return JSONResult.ok();
     }
 
     // 公共方法，保存到redis并封装成vo返回
     public UsersVO setUserRedisSessionToken(Users userModel) {
-        String uniqueToken = UUID.randomUUID().toString();//value
+        // UUID生成随机数据作为value
+        String uniqueToken = UUID.randomUUID().toString();
+
+        // 半小时失效
         redis.set(USER_REDIS_SESSION + ":" + userModel.getId(), uniqueToken, 1000 * 60 * 30);
 
         UsersVO userVO = new UsersVO();
+
+        // 利用BeanUtils吧user对象复制到VO里面
         BeanUtils.copyProperties(userModel, userVO);
         userVO.setUserToken(uniqueToken);
         return userVO;

@@ -21,7 +21,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-@Api(value="用户相关业务的接口", tags= {"用户相关业务的接口"})
+/**
+ * @Description: 用户相关业务的controller
+ */
+
+@Api(tags= {"UserController"},description="用户相关业务的接口")
 @RestController
 @RequestMapping("/user")
 public class UserController extends BasicController{

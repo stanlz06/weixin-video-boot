@@ -35,18 +35,31 @@ public class Swagger2 {
         ParameterBuilder userTokenHeader = new ParameterBuilder();
         ParameterBuilder userIdHeader = new ParameterBuilder();
         List<Parameter> pars = new ArrayList<Parameter>();  
-        userTokenHeader.name("headerUserToken").description("userToken")
-        	.modelRef(new ModelRef("string")).parameterType("header")
-        	.required(false).build();  
-        userIdHeader.name("headerUserId").description("userId")
-	    	.modelRef(new ModelRef("string")).parameterType("header")
-	    	.required(false).build(); 
+        userTokenHeader
+				.name("headerUserToken")
+				.description("userToken")
+        		.modelRef(new ModelRef("string"))
+				.parameterType("header")
+        		.required(false)
+				.build();
+
+        userIdHeader
+				.name("headerUserId")
+				.description("userId")
+	    		.modelRef(new ModelRef("string"))
+				.parameterType("header")
+	    		.required(false)
+				.build();
+
         pars.add(userTokenHeader.build());
         pars.add(userIdHeader.build());
 		
-		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
+		return new Docket(DocumentationType.SWAGGER_2)
+				.apiInfo(apiInfo())
+				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.stanlz.controller"))
-				.paths(PathSelectors.any()).build()
+				.paths(PathSelectors.any())
+				.build()
 				.globalOperationParameters(pars);
 	}
 
