@@ -20,4 +20,7 @@ public interface UserService {
 
     // 查询用户是否关注
     boolean queryIfFollow(String userId, String fanId);
+
+    // 查询用户是否喜欢点赞视频
+    boolean isUserLikeVideo(String userId, String videoId);
 }

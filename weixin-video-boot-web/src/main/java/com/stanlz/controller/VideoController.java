@@ -8,11 +8,13 @@ import com.stanlz.service.VideoService;
 import com.stanlz.utils.FetchVideoCover;
 import com.stanlz.utils.JSONResult;
 import com.stanlz.utils.MergeVideoMp3;
+import com.stanlz.utils.PagedResult;
 import io.swagger.annotations.*;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -217,5 +219,35 @@ public class VideoController extends BasicController {
         videoService.updateVideo(videoId, uploadPathDB);
 
         return JSONResult.ok();
+    }
+
+    /**
+     *
+     * @Description: 分页和搜索查询视频列表
+     * isSaveRecord：1 - 需要保存
+     * 				 0 - 不需要保存，或者为空的时候
+     */
+    @ApiOperation(value="获取视频列表")
+    @PostMapping(value="/showAll")
+    public JSONResult showAll(@RequestBody Videos video, Integer isSaveRecord,
+                              Integer page, Integer pageSize) throws Exception {
+
+        // 前端没有传入page、psearchVideoageSize的情况
+        if (page == null) {
+            page = 1;
+        }
+
+        if (pageSize == null) {
+            pageSize = PAGE_SIZE;
+        }
+
+        PagedResult result = videoService.getAllVideos(video, isSaveRecord, page, pageSize);
+        return JSONResult.ok(result);
+    }
+
+    @ApiOperation(value="热搜词")
+    @PostMapping(value="/hot")
+    public JSONResult hot() throws Exception {
+        return JSONResult.ok(videoService.getHotwords());
     }
 }

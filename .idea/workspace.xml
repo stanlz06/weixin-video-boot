@@ -2,30 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3fd8c80-684d-494b-b364-74f041cc0de0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/BgmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/VideoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/BgmServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/VideoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-service/target/classes/com/stanlz/service/BgmService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-service/target/classes/com/stanlz/service/VideoService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-service/target/classes/com/stanlz/service/impl/BgmServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-service/target/classes/com/stanlz/service/impl/VideoServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/BgmController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/VideoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/controller/BgmController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/controller/VideoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/SearchRecordsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/SearchRecordsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weixin-video-boot-dao/src/main/resources/mapper/SearchRecordsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-dao/src/main/resources/mapper/SearchRecordsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/VideoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/Swagger2.java" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/Swagger2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/VideoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/VideoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/LoginAndRegistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/LoginAndRegistController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/Swagger2.class" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/Swagger2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/WebMvcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/controller/LoginAndRegistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/controller/LoginAndRegistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/target/classes/com/stanlz/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/VideoController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/weixin-video-boot-dao/target/" />
@@ -56,11 +42,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/Swagger2.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="324">
+              <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/VideoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/VideoServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2748#2749#0" expanded="true" />
+                <element signature="e#2804#2805#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/BgmServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/BgmController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/LoginAndRegistController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,7 +175,6 @@
         <option value="$PROJECT_DIR$/weixin-video-boot-common/src/main/java/com/stanlz/utils/JsonUtils.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/BgmMapper.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/CommentsMapper.java" />
-        <option value="$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/SearchRecordsMapper.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/UsersFansMapper.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/UsersLikeVideosMapper.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/UsersMapper.java" />
@@ -120,20 +191,24 @@
         <option value="$PROJECT_DIR$/weixin-video-boot-pojo/src/main/java/com/stanlz/entity/vo/UsersVO.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/BasicController.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-pojo/src/main/java/com/stanlz/entity/Users.java" />
-        <option value="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/UserService.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/WebMvcConfig.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/Application.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/BgmService.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/BgmServiceImpl.java" />
-        <option value="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/BgmController.java" />
+        <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/Swagger2.java" />
+        <option value="$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/VideosMapperCustom.java" />
+        <option value="$PROJECT_DIR$/weixin-video-boot-dao/src/main/resources/mapper/VideosMapperCustom.xml" />
+        <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/VideoController.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/VideoService.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/VideoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/VideoController.java" />
-        <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/BgmController.java" />
+        <option value="$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/SearchRecordsMapper.java" />
+        <option value="$PROJECT_DIR$/weixin-video-boot-dao/src/main/resources/mapper/SearchRecordsMapper.xml" />
+        <option value="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/UserService.java" />
+        <option value="$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/LoginAndRegistController.java" />
-        <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/Swagger2.java" />
+        <option value="$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -184,8 +259,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,10 +266,137 @@
               <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
               <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="stanlz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weixin-video-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weixin_video_boot" type="462c0819:PsiDirectoryNode" />
+              <item name="weixin-video-boot-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="stanlz" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -219,11 +419,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\resources\mapper" />
+      <recent name="D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\java\com\stanlz\dao" />
       <recent name="D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz" />
       <recent name="D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\controller" />
       <recent name="D:\github\weixin_video_boot\weixin-video-boot-pojo\src\main\java\com\stanlz\entity" />
-      <recent name="D:\github\weixin_video_boot\weixin-video-boot-common\src\main\java\com\stanlz\utils" />
-      <recent name="D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -310,16 +510,18 @@
       <workItem from="1547701368452" duration="10871000" />
       <workItem from="1547727022045" duration="6185000" />
       <workItem from="1547779352975" duration="826000" />
+      <workItem from="1547780518194" duration="2799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17882000" />
+    <option name="totallyTimeSpent" value="20681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25973153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -329,7 +531,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.19472913" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.57247436" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -397,34 +599,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-common/src/main/java/com/stanlz/utils/MergeVideoMp3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-common/src/main/java/com/stanlz/utils/MyMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-common/src/main/java/com/stanlz/utils/PagedResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-common/src/main/java/com/stanlz/utils/RedisOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/weixin-video-boot-common/src/main/java/com/stanlz/utils/TimeAgoUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -497,13 +671,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/VideosMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/SearchRecordsMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
@@ -601,13 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-pojo/src/main/java/com/stanlz/entity/vo/VideosVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybatis-generatorConfig/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -619,13 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-180">
           <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -650,36 +803,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="40" selection-start-line="40" selection-end-line="40" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/BgmService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/BgmServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#335#336#0" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -691,27 +820,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/VideoService.java">
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/BasicController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/VideoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        <state relative-caret-position="201">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/Swagger2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1472">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/VideosMapperCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-pojo/src/main/java/com/stanlz/entity/vo/VideosVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-dao/src/main/resources/mapper/VideosMapperCustom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-dao/src/main/resources/mapper/UsersFansMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-dao/src/main/resources/mapper/SearchRecordsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-dao/src/main/java/com/stanlz/dao/SearchRecordsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/VideoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/VideoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2748#2749#0" expanded="true" />
+            <element signature="e#2804#2805#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-service/src/main/java/com/stanlz/service/impl/BgmServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -728,40 +937,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/VideoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/BasicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/LoginAndRegistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+        <state relative-caret-position="420">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/Swagger2.java">
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="324">
+          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin-video-boot-web/src/main/java/com/stanlz/controller/VideoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

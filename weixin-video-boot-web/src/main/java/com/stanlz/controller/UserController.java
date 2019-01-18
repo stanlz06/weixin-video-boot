@@ -1,6 +1,7 @@
 package com.stanlz.controller;
 
 import com.stanlz.entity.Users;
+import com.stanlz.entity.vo.PublisherVideo;
 import com.stanlz.entity.vo.UsersVO;
 import com.stanlz.service.UserService;
 import com.stanlz.utils.JSONResult;
@@ -31,7 +32,7 @@ import java.io.InputStream;
 public class UserController extends BasicController{
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @ApiOperation(value="用户上传头像")
     @ApiImplicitParam(name="userId", value="用户id", required=true,
@@ -100,8 +101,32 @@ public class UserController extends BasicController{
         Users userInfo = userService.queryUserInfo(userId);
         UsersVO userVO = new UsersVO();
         BeanUtils.copyProperties(userInfo, userVO);
-//        userVO.setFollow(userService.queryIfFollow(userId, fanId));
+//      userVO.setFollow(userService.queryIfFollow(userId, fanId));
 
         return JSONResult.ok(userVO);
+    }
+
+    @ApiOperation(value="查询发布者信息")
+    @PostMapping("/queryPublisher")
+    public JSONResult queryPublisher(String loginUserId, String videoId,
+                                     String publishUserId) throws Exception {
+
+        if (StringUtils.isBlank(publishUserId)) {
+            return JSONResult.errorMsg("");
+        }
+
+        // 1. 查询视频发布者的信息
+        Users userInfo = userService.queryUserInfo(publishUserId);
+        UsersVO publisher = new UsersVO();
+        BeanUtils.copyProperties(userInfo, publisher);
+
+        // 2. 查询当前登录者和视频的点赞关系
+        boolean userLikeVideo = userService.isUserLikeVideo(loginUserId, videoId);
+
+        PublisherVideo bean = new PublisherVideo();
+        bean.setPublisher(publisher);
+        bean.setUserLikeVideo(userLikeVideo);
+
+        return JSONResult.ok(bean);
     }
 }

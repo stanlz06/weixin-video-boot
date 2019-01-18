@@ -25,7 +25,7 @@ import java.util.UUID;
 @RestController
 public class LoginAndRegistController extends BasicController{
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @ApiOperation(value="用户注册")
     @PostMapping("/regist")

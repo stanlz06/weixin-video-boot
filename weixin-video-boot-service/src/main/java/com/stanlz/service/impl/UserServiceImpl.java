@@ -1,10 +1,13 @@
 package com.stanlz.service.impl;
 
 import com.stanlz.dao.UsersFansMapper;
+import com.stanlz.dao.UsersLikeVideosMapper;
 import com.stanlz.dao.UsersMapper;
 import com.stanlz.entity.Users;
 import com.stanlz.entity.UsersFans;
+import com.stanlz.entity.UsersLikeVideos;
 import com.stanlz.service.UserService;
+import org.apache.commons.lang3.StringUtils;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,12 +22,16 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     
     @Autowired
-    UsersMapper usersMapper;
-
-    UsersFansMapper usersFansMapper;
+    private UsersMapper usersMapper;
 
     @Autowired
-    Sid sid;
+    private UsersFansMapper usersFansMapper;
+
+    @Autowired
+    private UsersLikeVideosMapper usersLikeVideosMapper;
+
+    @Autowired
+    private Sid sid;
 
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
@@ -89,6 +96,29 @@ public class UserServiceImpl implements UserService {
         List<UsersFans> list = usersFansMapper.selectByExample(example);
 
         if (list != null && !list.isEmpty() && list.size() > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public boolean isUserLikeVideo(String userId, String videoId) {
+
+        if (StringUtils.isBlank(userId) || StringUtils.isBlank(videoId)) {
+            return false;
+        }
+
+        Example example = new Example(UsersLikeVideos.class);
+        Criteria criteria = example.createCriteria();
+
+        criteria.andEqualTo("userId", userId);
+        criteria.andEqualTo("videoId", videoId);
+
+        List<UsersLikeVideos> list = usersLikeVideosMapper.selectByExample(example);
+
+        if (list != null && list.size() >0) {
             return true;
         }
 
