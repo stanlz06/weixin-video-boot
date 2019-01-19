@@ -2,6 +2,8 @@ D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\java\com\stanlz\dao\U
 D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\java\com\stanlz\dao\UsersMapper.java
 D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\java\com\stanlz\dao\VideosMapper.java
 D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\java\com\stanlz\dao\UsersFansMapper.java
+D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\java\com\stanlz\dao\VideosMapperCustom.java
+D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\java\com\stanlz\dao\CommentsMapperCustom.java
 D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\java\com\stanlz\dao\UsersReportMapper.java
 D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\java\com\stanlz\dao\BgmMapper.java
 D:\github\weixin_video_boot\weixin-video-boot-dao\src\main\java\com\stanlz\dao\SearchRecordsMapper.java

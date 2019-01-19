@@ -2,20 +2,25 @@ package com.stanlz.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.stanlz.dao.SearchRecordsMapper;
-import com.stanlz.dao.VideosMapper;
-import com.stanlz.dao.VideosMapperCustom;
+import com.stanlz.dao.*;
+import com.stanlz.entity.Comments;
 import com.stanlz.entity.SearchRecords;
+import com.stanlz.entity.UsersLikeVideos;
 import com.stanlz.entity.Videos;
+import com.stanlz.entity.vo.CommentsVO;
 import com.stanlz.entity.vo.VideosVO;
 import com.stanlz.service.VideoService;
 import com.stanlz.utils.PagedResult;
+import com.stanlz.utils.TimeAgoUtils;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.entity.Example.Criteria;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,6 +34,18 @@ public class VideoServiceImpl implements VideoService {
 
     @Autowired
     private VideosMapperCustom videosMapperCustom;
+
+    @Autowired
+    private UsersLikeVideosMapper usersLikeVideosMapper;
+
+    @Autowired
+    private UsersMapper usersMapper;
+
+    @Autowired
+    private CommentsMapper commentsMapper;
+
+    @Autowired
+    private CommentsMapperCustom commentsMapperCustom;
 
     @Autowired
     private Sid sid;
@@ -47,7 +64,6 @@ public class VideoServiceImpl implements VideoService {
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void updateVideo(String videoId, String coverPath) {
-
         Videos video = new Videos();
         video.setId(videoId);
         video.setCoverPath(coverPath);
@@ -58,7 +74,6 @@ public class VideoServiceImpl implements VideoService {
     @Override
     public PagedResult getAllVideos(Videos video, Integer isSaveRecord,
                                     Integer page, Integer pageSize) {
-
         // 保存热搜词
         String desc = video.getVideoDesc();
         String userId = video.getUserId();
@@ -72,7 +87,6 @@ public class VideoServiceImpl implements VideoService {
 
         PageHelper.startPage(page, pageSize);
         List<VideosVO> list = videosMapperCustom.queryAllVideos(desc, userId);
-
         PageInfo<VideosVO> pageList = new PageInfo<>(list);
 
         PagedResult pagedResult = new PagedResult();
@@ -88,5 +102,104 @@ public class VideoServiceImpl implements VideoService {
     @Override
     public List<String> getHotwords() {
         return searchRecordsMapper.getHotwords();
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void userLikeVideo(String userId, String videoId, String videoCreaterId) {
+        // 1. 保存用户和视频的喜欢点赞关联关系表
+        String likeId = sid.nextShort();
+        UsersLikeVideos ulv = new UsersLikeVideos();
+        ulv.setId(likeId);
+        ulv.setUserId(userId);
+        ulv.setVideoId(videoId);
+        usersLikeVideosMapper.insert(ulv);
+
+        // 2. 视频喜欢数量累加
+        videosMapperCustom.addVideoLikeCount(videoId);
+
+        // 3. 用户受喜欢数量的累加
+        usersMapper.addReceiveLikeCount(videoCreaterId);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void userUnLikeVideo(String userId, String videoId, String videoCreaterId) {
+        // 1. 删除用户和视频的喜欢点赞关联关系表
+        Example example = new Example(UsersLikeVideos.class);
+        Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("userId", userId);
+        criteria.andEqualTo("videoId", videoId);
+
+        usersLikeVideosMapper.deleteByExample(example);
+
+        // 2. 视频喜欢数量累减
+        videosMapperCustom.reduceVideoLikeCount(videoId);
+
+        // 3. 用户受喜欢数量的累减
+        usersMapper.reduceReceiveLikeCount(videoCreaterId);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedResult queryMyLikeVideos(String userId, Integer page, Integer pageSize) {
+        PageHelper.startPage(page, pageSize);
+        List<VideosVO> list = videosMapperCustom.queryMyLikeVideos(userId);
+
+        PageInfo<VideosVO> pageList = new PageInfo<>(list);
+
+        PagedResult pagedResult = new PagedResult();
+        pagedResult.setTotal(pageList.getPages());
+        pagedResult.setRows(list);
+        pagedResult.setPage(page);
+        pagedResult.setRecords(pageList.getTotal());
+
+        return pagedResult;
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedResult queryMyFollowVideos(String userId, Integer page, Integer pageSize) {
+        PageHelper.startPage(page, pageSize);
+        List<VideosVO> list = videosMapperCustom.queryMyFollowVideos(userId);
+        PageInfo<VideosVO> pageList = new PageInfo<>(list);
+
+        PagedResult pagedResult = new PagedResult();
+        pagedResult.setTotal(pageList.getPages());
+        pagedResult.setRows(list);
+        pagedResult.setPage(page);
+        pagedResult.setRecords(pageList.getTotal());
+
+        return pagedResult;
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void saveComment(Comments comment) {
+        String id = sid.nextShort();
+        comment.setId(id);
+        comment.setCreateTime(new Date());
+        commentsMapper.insert(comment);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedResult getAllComments(String videoId, Integer page, Integer pageSize) {
+        PageHelper.startPage(page, pageSize);
+        List<CommentsVO> list = commentsMapperCustom.queryComments(videoId);
+
+        for (CommentsVO c : list) {
+            String timeAgo = TimeAgoUtils.format(c.getCreateTime());
+            c.setTimeAgoStr(timeAgo);
+        }
+
+        PageInfo<CommentsVO> pageList = new PageInfo<>(list);
+        PagedResult grid = new PagedResult();
+        grid.setTotal(pageList.getPages());
+        grid.setRows(list);
+        grid.setPage(page);
+        grid.setRecords(pageList.getTotal());
+
+        return grid;
     }
 }

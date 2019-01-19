@@ -1,6 +1,7 @@
 package com.stanlz.controller;
 
 import com.stanlz.entity.Bgm;
+import com.stanlz.entity.Comments;
 import com.stanlz.entity.Videos;
 import com.stanlz.enums.VideoStatusEnum;
 import com.stanlz.service.BgmService;
@@ -89,7 +90,6 @@ public class VideoController extends BasicController {
 //				String fileNamePrefix = fileName.split("\\.")[0];
 
                 if (StringUtils.isNotBlank(fileName)) {
-
                     finalVideoPath = FILE_SPACE + uploadPathDB + "/" + fileName;
                     // 设置数据库保存的路径
                     uploadPathDB += ("/" + fileName);
@@ -187,7 +187,6 @@ public class VideoController extends BasicController {
 
                 String fileName = file.getOriginalFilename();
                 if (StringUtils.isNotBlank(fileName)) {
-
                     finalCoverPath = FILE_SPACE + uploadPathDB + "/" + fileName;
                     // 设置数据库保存的路径
                     uploadPathDB += ("/" + fileName);
@@ -202,7 +201,6 @@ public class VideoController extends BasicController {
                     inputStream = file.getInputStream();
                     IOUtils.copy(inputStream, fileOutputStream);
                 }
-
             } else {
                 return JSONResult.errorMsg("上传出错...");
             }
@@ -249,5 +247,83 @@ public class VideoController extends BasicController {
     @PostMapping(value="/hot")
     public JSONResult hot() throws Exception {
         return JSONResult.ok(videoService.getHotwords());
+    }
+
+    @ApiOperation(value="给视频点赞")
+    @PostMapping(value="/userLike")
+    public JSONResult userLike(String userId, String videoId, String videoCreaterId) throws Exception {
+        videoService.userLikeVideo(userId, videoId, videoCreaterId);
+        return JSONResult.ok();
+    }
+
+    @ApiOperation(value="取消视频点赞")
+    @PostMapping(value="/userUnLike")
+    public JSONResult userUnLike(String userId, String videoId, String videoCreaterId) throws Exception {
+        videoService.userUnLikeVideo(userId, videoId, videoCreaterId);
+        return JSONResult.ok();
+    }
+
+    /**
+     * @Description: 我关注的人发的视频
+     */
+    @ApiOperation(value="关注的人发的视频")
+    @PostMapping("/showMyFollow")
+    public JSONResult showMyFollow(String userId, Integer page) throws Exception {
+        if (StringUtils.isBlank(userId)) {
+            return JSONResult.ok();
+        }
+        if (page == null) {
+            page = 1;
+        }
+        int pageSize = 6;
+        PagedResult videosList = videoService.queryMyFollowVideos(userId, page, pageSize);
+        return JSONResult.ok(videosList);
+    }
+
+    /**
+     * @Description: 我收藏(点赞)过的视频列表
+     */
+    @ApiOperation(value="收藏(点赞)过的视频列表")
+    @PostMapping("/showMyLike")
+    public JSONResult showMyLike(String userId, Integer page, Integer pageSize) throws Exception {
+        if (StringUtils.isBlank(userId)) {
+            return JSONResult.ok();
+        }
+        if (page == null) {
+            page = 1;
+        }
+        if (pageSize == null) {
+            pageSize = 6;
+        }
+        PagedResult videosList = videoService.queryMyLikeVideos(userId, page, pageSize);
+        return JSONResult.ok(videosList);
+    }
+
+    @ApiOperation(value="保存评论")
+    @PostMapping("/saveComment")
+    public JSONResult saveComment(@RequestBody Comments comment,
+                                  String fatherCommentId, String toUserId) throws Exception {
+        comment.setFatherCommentId(fatherCommentId);
+        comment.setToUserId(toUserId);
+
+        videoService.saveComment(comment);
+        return JSONResult.ok();
+    }
+
+    @ApiOperation(value="获取所有评论信息")
+    @PostMapping("/getVideoComments")
+    public JSONResult getVideoComments(String videoId, Integer page, Integer pageSize) throws Exception {
+        if (StringUtils.isBlank(videoId)) {
+            return JSONResult.ok();
+        }
+        // 分页查询视频列表，时间顺序倒序排序
+        if (page == null) {
+            page = 1;
+        }
+        if (pageSize == null) {
+            pageSize = 10;
+        }
+        PagedResult list = videoService.getAllComments(videoId, page, pageSize);
+        return JSONResult.ok(list);
     }
 }

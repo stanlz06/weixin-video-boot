@@ -1,6 +1,7 @@
 package com.stanlz.service;
 
 import com.stanlz.entity.Users;
+import com.stanlz.entity.UsersReport;
 
 public interface UserService {
     // 判断用户名是否存在
@@ -23,4 +24,13 @@ public interface UserService {
 
     // 查询用户是否喜欢点赞视频
     boolean isUserLikeVideo(String userId, String videoId);
+
+    // 增加用户和粉丝的关系
+    void saveUserFanRelation(String userId, String fanId);
+
+    // 删除用户和粉丝的关系
+    void deleteUserFanRelation(String userId, String fanId);
+
+    // 举报用户
+    void reportUser(UsersReport userReport);
 }

@@ -9,10 +9,10 @@ import tk.mybatis.spring.annotation.MapperScan;
 @SpringBootApplication
 @MapperScan(basePackages="com.stanlz.dao")
 @ComponentScan(basePackages= {"com.stanlz", "org.n3r.idworker"})
-public class Application {
+public class WxVideoApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(WxVideoApplication.class, args);
 	}
 	
 }

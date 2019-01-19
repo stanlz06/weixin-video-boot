@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BasicController {
 	
 	@Autowired
-	public RedisOperator redis;
+	public RedisOperator redis;// StringRedisTemplate
 	
 	public static final String USER_REDIS_SESSION = "user-redis-session";
 	

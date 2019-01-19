@@ -1,4 +1,9 @@
-D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\controller\HelloController.java
+D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\controller\UserController.java
 D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\controller\BasicController.java
-D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\Application.java
+D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\controller\interceptor\MiniInterceptor.java
+D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\controller\BgmController.java
+D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\Swagger2.java
 D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\controller\LoginAndRegistController.java
+D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\controller\VideoController.java
+D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\WxVideoApplication.java
+D:\github\weixin_video_boot\weixin-video-boot-web\src\main\java\com\stanlz\WebMvcConfig.java

@@ -3,9 +3,11 @@ package com.stanlz.service.impl;
 import com.stanlz.dao.UsersFansMapper;
 import com.stanlz.dao.UsersLikeVideosMapper;
 import com.stanlz.dao.UsersMapper;
+import com.stanlz.dao.UsersReportMapper;
 import com.stanlz.entity.Users;
 import com.stanlz.entity.UsersFans;
 import com.stanlz.entity.UsersLikeVideos;
+import com.stanlz.entity.UsersReport;
 import com.stanlz.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.n3r.idworker.Sid;
@@ -16,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.entity.Example.Criteria;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,6 +32,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UsersLikeVideosMapper usersLikeVideosMapper;
+
+    @Autowired
+    private UsersReportMapper usersReportMapper;
 
     @Autowired
     private Sid sid;
@@ -66,7 +72,6 @@ public class UserServiceImpl implements UserService {
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void updateUserInfo(Users user) {
-
         Example userExample = new Example(Users.class);
         Criteria criteria = userExample.createCriteria();
         criteria.andEqualTo("id", user.getId());
@@ -83,22 +88,17 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
-
     @Override
     public boolean queryIfFollow(String userId, String fanId) {
-
         Example example = new Example(UsersFans.class);
         Criteria criteria = example.createCriteria();
-
         criteria.andEqualTo("userId", userId);
         criteria.andEqualTo("fanId", fanId);
-
         List<UsersFans> list = usersFansMapper.selectByExample(example);
 
         if (list != null && !list.isEmpty() && list.size() > 0) {
             return true;
         }
-
         return false;
     }
 
@@ -112,16 +112,50 @@ public class UserServiceImpl implements UserService {
 
         Example example = new Example(UsersLikeVideos.class);
         Criteria criteria = example.createCriteria();
-
         criteria.andEqualTo("userId", userId);
         criteria.andEqualTo("videoId", videoId);
-
         List<UsersLikeVideos> list = usersLikeVideosMapper.selectByExample(example);
 
         if (list != null && list.size() >0) {
             return true;
         }
-
         return false;
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void saveUserFanRelation(String userId, String fanId) {
+        String relId = sid.nextShort();
+        UsersFans userFan = new UsersFans();
+        userFan.setId(relId);
+        userFan.setUserId(userId);
+        userFan.setFanId(fanId);
+
+        usersFansMapper.insert(userFan);
+        usersMapper.addFansCount(userId);
+        usersMapper.addFollersCount(fanId);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void deleteUserFanRelation(String userId, String fanId) {
+        Example example = new Example(UsersFans.class);
+        Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("userId", userId);
+        criteria.andEqualTo("fanId", fanId);
+
+        usersFansMapper.deleteByExample(example);
+        usersMapper.reduceFansCount(userId);
+        usersMapper.reduceFollersCount(fanId);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void reportUser(UsersReport userReport) {
+        String urId = sid.nextShort();
+        userReport.setId(urId);
+        userReport.setCreateDate(new Date());
+        
+        usersReportMapper.insert(userReport);
     }
 }

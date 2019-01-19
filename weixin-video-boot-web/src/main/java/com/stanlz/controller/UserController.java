@@ -1,6 +1,7 @@
 package com.stanlz.controller;
 
 import com.stanlz.entity.Users;
+import com.stanlz.entity.UsersReport;
 import com.stanlz.entity.vo.PublisherVideo;
 import com.stanlz.entity.vo.UsersVO;
 import com.stanlz.service.UserService;
@@ -12,10 +13,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -94,14 +92,14 @@ public class UserController extends BasicController{
             dataType="String", paramType="query")
     @PostMapping("/query")
     public JSONResult query(String userId, String fanId) throws Exception {
-
+        // 用户名不能为空
         if (StringUtils.isBlank(userId)) {
             return JSONResult.errorMsg("用户id不能为空...");
         }
         Users userInfo = userService.queryUserInfo(userId);
         UsersVO userVO = new UsersVO();
         BeanUtils.copyProperties(userInfo, userVO);
-//      userVO.setFollow(userService.queryIfFollow(userId, fanId));
+        userVO.setFollow(userService.queryIfFollow(userId, fanId));
 
         return JSONResult.ok(userVO);
     }
@@ -110,7 +108,7 @@ public class UserController extends BasicController{
     @PostMapping("/queryPublisher")
     public JSONResult queryPublisher(String loginUserId, String videoId,
                                      String publishUserId) throws Exception {
-
+        // 发布者id不能为空
         if (StringUtils.isBlank(publishUserId)) {
             return JSONResult.errorMsg("");
         }
@@ -128,5 +126,35 @@ public class UserController extends BasicController{
         bean.setUserLikeVideo(userLikeVideo);
 
         return JSONResult.ok(bean);
+    }
+
+    @ApiOperation(value="点击关注")
+    @PostMapping("/beyourfans")
+    public JSONResult beyourfans(String userId, String fanId) throws Exception {
+        // 用户名不能为空
+        if (StringUtils.isBlank(userId) || StringUtils.isBlank(fanId)) {
+            return JSONResult.errorMsg("");
+        }
+        userService.saveUserFanRelation(userId, fanId);
+        return JSONResult.ok("关注成功...");
+    }
+
+    @ApiOperation(value="取消关注")
+    @PostMapping("/dontbeyourfans")
+    public JSONResult dontbeyourfans(String userId, String fanId) throws Exception {
+        // 用户名不能为空
+        if (StringUtils.isBlank(userId) || StringUtils.isBlank(fanId)) {
+            return JSONResult.errorMsg("");
+        }
+        userService.deleteUserFanRelation(userId, fanId);
+        return JSONResult.ok("取消关注成功...");
+    }
+
+    @ApiOperation(value="举报用户")
+    @PostMapping("/reportUser")
+    public JSONResult reportUser(@RequestBody UsersReport usersReport) throws Exception {
+        // 保存举报信息
+        userService.reportUser(usersReport);
+        return JSONResult.errorMsg("举报成功...有你平台变得更美好...");
     }
 }

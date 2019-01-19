@@ -67,16 +67,15 @@ public class LoginAndRegistController extends BasicController{
         String username = user.getUsername();
         String password = user.getPassword();
 
-        // 1. 判断用户名和密码必须不为空
+        // 判断用户名和密码必须不为空
         if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
             return JSONResult.errorMsg("用户名或密码不能为空...");
         }
 
-        // 2. 判断用户是否存在
+        // 判断用户是否存在
         Users userResult = userService.queryUserForLogin(username,
                 MD5Utils.getMD5Str(password));
 
-        // 3. 返回
         if (userResult != null) {
             //只保存到数据库，不返回到前端
             userResult.setPassword("");
