@@ -105,7 +105,7 @@ public class UserServiceImpl implements UserService {
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public boolean isUserLikeVideo(String userId, String videoId) {
-
+        // Controller可能传空
         if (StringUtils.isBlank(userId) || StringUtils.isBlank(videoId)) {
             return false;
         }

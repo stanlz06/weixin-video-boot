@@ -77,7 +77,7 @@ public class LoginAndRegistController extends BasicController{
                 MD5Utils.getMD5Str(password));
 
         if (userResult != null) {
-            //只保存到数据库，不返回到前端
+            // 不返回到前端
             userResult.setPassword("");
 
             // 保存到redis并封装到VO
