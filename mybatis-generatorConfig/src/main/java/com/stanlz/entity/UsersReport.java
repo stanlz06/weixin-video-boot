@@ -5,6 +5,9 @@ import javax.persistence.*;
 
 @Table(name = "users_report")
 public class UsersReport {
+    /**
+     * 主键id
+     */
     @Id
     private String id;
 
@@ -14,6 +17,9 @@ public class UsersReport {
     @Column(name = "deal_user_id")
     private String dealUserId;
 
+    /**
+     * 被举报的视频
+     */
     @Column(name = "deal_video_id")
     private String dealVideoId;
 
@@ -39,14 +45,18 @@ public class UsersReport {
     private Date createDate;
 
     /**
-     * @return id
+     * 获取主键id
+     *
+     * @return id - 主键id
      */
     public String getId() {
         return id;
     }
 
     /**
-     * @param id
+     * 设置主键id
+     *
+     * @param id 主键id
      */
     public void setId(String id) {
         this.id = id;
@@ -71,14 +81,18 @@ public class UsersReport {
     }
 
     /**
-     * @return deal_video_id
+     * 获取被举报的视频
+     *
+     * @return deal_video_id - 被举报的视频
      */
     public String getDealVideoId() {
         return dealVideoId;
     }
 
     /**
-     * @param dealVideoId
+     * 设置被举报的视频
+     *
+     * @param dealVideoId 被举报的视频
      */
     public void setDealVideoId(String dealVideoId) {
         this.dealVideoId = dealVideoId;

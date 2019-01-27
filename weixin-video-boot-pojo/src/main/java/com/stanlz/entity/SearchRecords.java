@@ -10,5 +10,7 @@ import javax.persistence.Table;
 public class SearchRecords {
     @Id
     private String id;
+
+    /* 搜索的内容 */
     private String content;
 }

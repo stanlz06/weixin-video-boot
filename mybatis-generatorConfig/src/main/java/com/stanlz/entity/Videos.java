@@ -4,6 +4,9 @@ import java.util.Date;
 import javax.persistence.*;
 
 public class Videos {
+    /**
+     * 主键id
+     */
     @Id
     private String id;
 
@@ -75,14 +78,18 @@ public class Videos {
     private Date createTime;
 
     /**
-     * @return id
+     * 获取主键id
+     *
+     * @return id - 主键id
      */
     public String getId() {
         return id;
     }
 
     /**
-     * @param id
+     * 设置主键id
+     *
+     * @param id 主键id
      */
     public void setId(String id) {
         this.id = id;

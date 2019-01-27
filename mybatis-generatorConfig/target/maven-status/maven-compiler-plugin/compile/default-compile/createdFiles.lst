@@ -9,8 +9,10 @@ com\stanlz\dao\BgmMapper.class
 com\stanlz\dao\CommentsMapper.class
 com\stanlz\entity\Bgm.class
 com\stanlz\entity\UsersLikeVideos.class
+GeneratorDisplay.class
 com\stanlz\dao\UsersReportMapper.class
 com\stanlz\entity\SearchRecords.class
 com\stanlz\entity\UsersFans.class
+com\stanlz\utils\MyMapper.class
 com\stanlz\dao\SearchRecordsMapper.class
 com\stanlz\dao\VideosMapper.class

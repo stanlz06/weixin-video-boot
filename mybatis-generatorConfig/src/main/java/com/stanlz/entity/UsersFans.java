@@ -4,6 +4,9 @@ import javax.persistence.*;
 
 @Table(name = "users_fans")
 public class UsersFans {
+    /**
+     * 主键id
+     */
     @Id
     private String id;
 
@@ -20,14 +23,18 @@ public class UsersFans {
     private String fanId;
 
     /**
-     * @return id
+     * 获取主键id
+     *
+     * @return id - 主键id
      */
     public String getId() {
         return id;
     }
 
     /**
-     * @param id
+     * 设置主键id
+     *
+     * @param id 主键id
      */
     public void setId(String id) {
         this.id = id;

@@ -1,1 +1,12 @@
 com\stanlz\entity\Users.class
+com\stanlz\entity\Bgm.class
+com\stanlz\entity\vo\CommentsVO.class
+com\stanlz\entity\vo\VideosVO.class
+com\stanlz\entity\Comments.class
+com\stanlz\entity\SearchRecords.class
+com\stanlz\entity\UsersFans.class
+com\stanlz\entity\UsersReport.class
+com\stanlz\entity\UsersLikeVideos.class
+com\stanlz\entity\vo\UsersVO.class
+com\stanlz\entity\vo\PublisherVideo.class
+com\stanlz\entity\Videos.class

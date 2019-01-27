@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface SearchRecordsMapper extends MyMapper<SearchRecords> {
-    // 查询热搜词
+    /* 查询热搜词 */
     List<String> getHotwords();
 }

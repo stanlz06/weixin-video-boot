@@ -23,6 +23,12 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		.addResourceLocations("file:E:/savepath/userinfo-path/"); //本地资源
 	}
 
+	// 注入ZKCuratorClient
+	@Bean(initMethod="init")
+	public ZKCuratorClient zkCuratorClient() {
+		return new ZKCuratorClient();
+	}
+
 	// 注入MiniInterceptor
 	@Bean
 	public MiniInterceptor miniInterceptor() {

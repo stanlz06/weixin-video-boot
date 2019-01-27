@@ -1,0 +1,6 @@
+com\stanlz\service\impl\UserServiceImpl.class
+com\stanlz\service\BgmService.class
+com\stanlz\service\impl\VideoServiceImpl.class
+com\stanlz\service\VideoService.class
+com\stanlz\service\impl\BgmServiceImpl.class
+com\stanlz\service\UserService.class

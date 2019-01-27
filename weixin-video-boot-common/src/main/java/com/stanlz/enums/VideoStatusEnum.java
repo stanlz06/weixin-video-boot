@@ -10,9 +10,12 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum VideoStatusEnum {
-	
-	SUCCESS(1),		// 发布成功
-	FORBID(2);		// 禁止播放，管理员操作
-	
+	/* 发布成功 */
+	SUCCESS(1),
+
+	/* 禁止播放，管理员操作 */
+	FORBID(2);
+
+	/* 状态 */
 	public final int value;
 }

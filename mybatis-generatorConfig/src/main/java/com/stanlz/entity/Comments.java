@@ -4,12 +4,21 @@ import java.util.Date;
 import javax.persistence.*;
 
 public class Comments {
+    /**
+     * 主键id
+     */
     @Id
     private String id;
 
+    /**
+     * 父评论id，被回复的评论
+     */
     @Column(name = "father_comment_id")
     private String fatherCommentId;
 
+    /**
+     * 评论被回复的用户id
+     */
     @Column(name = "to_user_id")
     private String toUserId;
 
@@ -25,6 +34,9 @@ public class Comments {
     @Column(name = "from_user_id")
     private String fromUserId;
 
+    /**
+     * 创建时间
+     */
     @Column(name = "create_time")
     private Date createTime;
 
@@ -34,42 +46,54 @@ public class Comments {
     private String comment;
 
     /**
-     * @return id
+     * 获取主键id
+     *
+     * @return id - 主键id
      */
     public String getId() {
         return id;
     }
 
     /**
-     * @param id
+     * 设置主键id
+     *
+     * @param id 主键id
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return father_comment_id
+     * 获取父评论id，被回复的评论
+     *
+     * @return father_comment_id - 父评论id，被回复的评论
      */
     public String getFatherCommentId() {
         return fatherCommentId;
     }
 
     /**
-     * @param fatherCommentId
+     * 设置父评论id，被回复的评论
+     *
+     * @param fatherCommentId 父评论id，被回复的评论
      */
     public void setFatherCommentId(String fatherCommentId) {
         this.fatherCommentId = fatherCommentId;
     }
 
     /**
-     * @return to_user_id
+     * 获取评论被回复的用户id
+     *
+     * @return to_user_id - 评论被回复的用户id
      */
     public String getToUserId() {
         return toUserId;
     }
 
     /**
-     * @param toUserId
+     * 设置评论被回复的用户id
+     *
+     * @param toUserId 评论被回复的用户id
      */
     public void setToUserId(String toUserId) {
         this.toUserId = toUserId;
@@ -112,14 +136,18 @@ public class Comments {
     }
 
     /**
-     * @return create_time
+     * 获取创建时间
+     *
+     * @return create_time - 创建时间
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * @param createTime
+     * 设置创建时间
+     *
+     * @param createTime 创建时间
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;

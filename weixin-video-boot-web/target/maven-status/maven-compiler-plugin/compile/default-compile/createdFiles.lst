@@ -1,2 +1,12 @@
+com\stanlz\controller\BasicController.class
+com\stanlz\ZKCuratorClient$1.class
+com\stanlz\controller\interceptor\MiniInterceptor.class
+com\stanlz\controller\VideoController.class
+com\stanlz\cofig\ResourceConfig.class
+com\stanlz\controller\BgmController.class
+com\stanlz\ZKCuratorClient.class
 com\stanlz\controller\LoginAndRegistController.class
+com\stanlz\WebMvcConfig.class
+com\stanlz\controller\UserController.class
 com\stanlz\Swagger2.class
+com\stanlz\WxVideoApplication.class

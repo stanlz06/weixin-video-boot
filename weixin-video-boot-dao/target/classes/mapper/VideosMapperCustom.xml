@@ -25,8 +25,7 @@
     <select id="queryAllVideos" resultMap="BaseResultMap" parameterType="String">
         select v.*,u.face_image as face_image,u.nickname as nickname from videos v
         left join users u on u.id = v.user_id
-        where
-        1 = 1
+        where 1 = 1
         <if test=" videoDesc != null and videoDesc != '' ">
             and v.video_desc like '%${videoDesc}%'
         </if>

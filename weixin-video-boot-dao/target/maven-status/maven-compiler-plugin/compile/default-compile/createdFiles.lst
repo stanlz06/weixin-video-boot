@@ -1,0 +1,10 @@
+com\stanlz\dao\VideosMapperCustom.class
+com\stanlz\dao\UsersFansMapper.class
+com\stanlz\dao\UsersReportMapper.class
+com\stanlz\dao\UsersLikeVideosMapper.class
+com\stanlz\dao\CommentsMapperCustom.class
+com\stanlz\dao\UsersMapper.class
+com\stanlz\dao\BgmMapper.class
+com\stanlz\dao\CommentsMapper.class
+com\stanlz\dao\SearchRecordsMapper.class
+com\stanlz\dao\VideosMapper.class
